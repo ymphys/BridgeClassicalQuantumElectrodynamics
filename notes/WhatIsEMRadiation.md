@@ -27,9 +27,9 @@
 
 ## 2. 经典电动力学中的辐射
 
-经典电动力学中，辐射是作为具有非惯性运动的源的Maxwell方程组的解的一部分自然出现的。考虑一个点粒子，其世界线为$Y^\mu(\tau)$, 洛伦兹规范下，Maxwell方程组可写为
+经典电动力学中，辐射是作为具有非惯性运动的源的Maxwell方程组的解的一部分自然出现的。考虑一个点粒子，其世界线为$Y^\mu(\tau)$, 洛伦兹规范$\partial_\mu A^\mu=0$下，Maxwell方程组可写为
 $$
-\square A^\mu=\mu_0 J^\mu, \text{with}\ \partial_\mu A^\mu=0,\ J^\mu=qc\int d\tau \dot{Y}^\mu(\tau)\delta^{4}(X-Y).
+\partial_\mu F^{\mu\nu}=\square A^\mu=\mu_0 J^\mu,\ J^\mu=qc\int d\tau \dot{Y}^\mu(\tau)\delta^{4}(X-Y).
 $$
 其中$\delta^{4}(X-Y)=\delta(ct-Y^0)\delta^{3}(\vec{x}-\vec{y}(\tau))$, 上式的解为
 $$
@@ -100,49 +100,17 @@ $$
 $$
   其显式形式为
 $$
-G_{\text{ret}}(X-X') = \frac{1}{2\pi},\theta(X^0-X'^0),\delta!\big((X-X')^2\big)
+G_{\text{ret}}(X-X') = \frac{1}{2\pi}\theta(X^0-X'^0)\delta\big((X-X')^2\big)
 $$
-  因此势的解为
+  因此势$A^\mu$为
 $$
-A^\mu(X) = \mu_0 \int d^4X' , G_{\text{ret}}(X-X') J^\mu(X')
+A^\mu(X) = \frac{\mu_0 q c}{2\pi}\int d\tau \dot Y^\mu(\tau)\theta\big(X^0-Y^0(\tau)\big)\delta\big(R^2(\tau)\big)=\frac{\mu_0 q c}{4\pi}\frac{\dot Y^\mu(\tau^\star)}{|R^\mu(\tau^\star) \dot{Y}_\mu(\tau^\star)|}
 $$
-  代入四流表达式：
-$$
-A^\mu(X)= \mu_0 q c \int d\tau , \dot Y^\mu(\tau), G_{\text{ret}}!\big(X - Y(\tau)\big)
-$$
-
-利用光锥 δ 函数完成固有时积分, 代入 Green 函数：
-$$
-A^\mu(X)= \frac{\mu_0 q c}{2\pi}\int d\tau , \dot Y^\mu(\tau),\theta!\big(X^0-Y^0(\tau)\big)\delta!\big(R^2(\tau)\big)
-$$
-其中
-$$
-R^\mu(\tau) \equiv X^\mu - Y^\mu(\tau)
-$$
-
-δ 函数的变量变换
-
-$$
-\delta(f(\tau))=\sum_{\tau_*}\frac{\delta(\tau-\tau_*)}{|f'(\tau_*)|}
-$$
-并注意
-$$
-\frac{d}{d\tau} R^2(\tau)= -2 R^\mu \dot Y_\mu
-$$
-得到
-$$
-\delta(R^2)= \frac{\delta(\tau-\tau_*)}{2|R\cdot \dot Y|}
-$$
-其中 (\tau_*) 由**推迟光锥条件**
+其中$R^\mu(\tau) \equiv X^\mu - Y^\mu(\tau)$, $\delta(R^2)= \sum_{\tau^\star}\delta(\tau-\tau^\star)/(2|R^\mu(\tau) \dot{Y}_\mu(\tau)|$, $\tau^\star$ 由**推迟光锥条件**
 $$
 R^2(\tau_*)=0,\quad X^0>Y^0(\tau_*)
 $$
 唯一确定。
-得到 Liénard–Wiechert 四势. 执行 (\tau) 积分后： 
-$$
-\boxed{ A^\mu(X)\frac{\mu_0 q c}{4\pi}\frac{\dot Y^\mu(\tau_*)}{R^\nu(\tau_*),\dot Y_\nu(\tau_*)}}
-$$
-这是**协变形式的 Liénard–Wiechert 势**，与你给出的结果完全一致。
 
 场强张量的计算：(F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu), (A^\mu(X)) **不仅显含 (X)**，还**隐含于 (\tau_\*(X))**。
 
@@ -192,7 +160,7 @@ $$
   }
   ]
 
-  ------
+------
 
   ## 8. 辐射项的识别（物理解释）
 
@@ -215,7 +183,7 @@ $$
 
   > **辐射并非附加假设，而是非惯性世界线的 Maxwell 方程解中必然出现的远区贡献**
 
-  ------
+------
 
   ## 9. 总结
 
@@ -224,7 +192,7 @@ $$
   - (1/R) 项严格对应加速度，体现辐射的协变本质
   - 全过程完全保持 Lorentz 协变性
 
-  ------
+------
 
   ## 参考文献（权威来源）
 
@@ -233,7 +201,7 @@ $$
   3. F. Rohrlich, *Classical Charged Particles*, World Scientific (2007)
   4. S. Weinberg, *The Quantum Theory of Fields, Vol. I*, Cambridge University Press (1995), Appendix A
 
-  ------
+------
 
   如果你愿意，我可以进一步：
 
