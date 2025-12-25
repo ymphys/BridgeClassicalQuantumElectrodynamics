@@ -26,6 +26,8 @@
 
 ## 2. 经典电动力学中的辐射
 
+### 辐射场与辐射功率
+
 经典电动力学中，辐射是作为具有非惯性运动的源的Maxwell方程组的解的一部分自然出现的。考虑一个点粒子，其世界线为$Y^\mu(\tau)$, 洛伦兹规范$\partial_\mu A^\mu=0$下，Maxwell方程组可写为
 $$
 \partial_\mu F^{\mu\nu}=\square A^\mu=\mu_0 J^\mu,\ J^\mu=qc\int d\tau \dot{Y}^\mu(\tau)\delta^{4}(X-Y).
@@ -48,7 +50,19 @@ $$
 \mathbf{B}=\frac{1}{c}[\hat{\mathbf{R}}]_{\mathrm{ret}} \times \mathbf{E}=-\frac{q \mu_0}{4 \pi}\left[\frac{\hat{\mathbf{R}} \times \mathbf{v}}{\gamma^2 \kappa^3 R^2}+\frac{(\hat{\mathbf{R}} \cdot \mathbf{a})(\hat{\mathbf{R}} \times \mathbf{v} / c)+\kappa \hat{\mathbf{R}} \times \mathbf{a}}{c \kappa^3 R}\right]_{\mathrm{ret}}
 $$
 
-由此可以计算Poynting矢量，进而得出辐射功率的角分布以及总辐射功率。这里给出几种典型的辐射功率：
+由此可以计算Poynting矢量，
+$$
+\mathbf{S}=\frac{q^2}{16 \pi^2 \epsilon_0 c^3} \frac{|\hat{\mathbf{R}} \times[(\hat{\mathbf{R}}-\mathbf{v} / c) \times \mathbf{a}]|^2}{\kappa^6 R^2} \hat{\mathbf{R}}
+$$
+公式中的每一项都是在推迟时间$t'$计算得到的, $t'+R(t')/c=t$, 因此每单位时间$dt'$辐射能量的角分布为
+$$
+\frac{d \mathcal{P}}{d \Omega}=\kappa R^2 \mathbf{S} \cdot \hat{\mathbf{R}}=\frac{q^2}{16 \pi^2 \epsilon_0 c^3} \frac{|\hat{\mathbf{R}} \times[(\hat{\mathbf{R}}-\mathbf{v} / c) \times \mathbf{a}]|^2}{\kappa^5}
+$$
+总辐射功率为
+$$
+\mathcal{P}=\frac{q^2}{6 \pi \epsilon_0 c^3} \gamma^4\left(a^2+\frac{\gamma^2}{c^2}(\mathbf{v} \cdot \mathbf{a})^2\right)
+$$
+这实际上这是相对论版本的**Lamor公式**，也称为*Lienard推广的Lamor公式*。下面针对几种典型情况给出辐射功率：
 
 **bremsstrahlung**
 
@@ -69,7 +83,7 @@ $$
 $$
 \overline{\mathcal{P}}=\frac{\mu_0 p^2 \omega^4}{12 \pi c}=\frac{Q^2 a^2}{12 \pi \epsilon_0 c^3}
 $$
-这被称为Lamor公式。
+这被称为**Lamor公式**。
 
 更进一步地，考虑电子在频率为$\omega$, 振幅为$E_0$的外电场作用下运动，如场强较弱，电子运动速度远远小于光速，可近似得到$a=q_eE_0/m_e$, 代入Lamor公式可得电子辐射总功率
 $$
@@ -81,6 +95,10 @@ $$
 \sigma=\frac{\overline{\mathcal{P}}_{\text {radiated }}}{\bar{S}_{\text {incident }}}=\frac{\mu_0^2 q_e^4}{6 \pi m^2 c^2}=\frac{8 \pi}{3} r_e^2
 $$
 其中$\bar{S}_{\text {incident}}=cE_0^2/(2\mu_0)$, $r_e=q_e^4/(4\pi\epsilon_0mc^2)$是电子的经典半径。
+
+### 辐射反作用
+
+
 
 [^1]: $A^\mu,F^{\mu\nu}$​的详细求解可参见[1]: Chap. 6, Sec. 4, Sub. 4. P165-168;[2]: Chap. 14, Sec. 1. P661-665.
 
