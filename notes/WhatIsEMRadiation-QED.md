@@ -24,7 +24,17 @@ $$
 $$
 \partial_\mu F^{\mu\nu}=e\bar{\psi}\gamma^\nu\psi,\ (iD\!\!\!\!/-m)\psi=0
 $$
-第一个方程显然具有我们熟悉的Maxwell方程组的形式，只是四维电流密度被写为费米子场的双线性型；第二个方程则是电磁场中的Dirac方程。
+第一个方程显然具有我们熟悉的Maxwell方程组的形式，只是四维电流密度被写为费米子场的矢量双线性型；第二个方程则是电磁场中的Dirac方程。
+
+与经典电动力学相比，量子电动力学的四维电流密度具有如下内涵：
+
+1. 电磁场的源项不再由点粒子的世界线构造，而是费米子场；
+2. 费米子场描述包含了电子的自旋与磁矩；
+3. 矢量双线性型自然满足电荷守恒；
+
+
+
+电磁场中的Dirac方程满足局域规范不变性，其中包含了电子与电磁场的最小耦合(minimum coupling)
 
 ---
 
@@ -37,10 +47,11 @@ $$
 #### 2.1 单光子发射振幅与经典辐射谱
 
 * 电子在外场中的
-  [
+  $$
   e^- \to e^- + \gamma
-  ]
-* 微扰计算 → 发射概率
+  $$
+  微扰计算 → 发射概率
+  
 * 在
 
   * 软光子极限
@@ -187,6 +198,20 @@ $$
 ---
 
 ## 附录
+
+$$
+\gamma^{\mu}=(\gamma^0,\gamma^i),\ \gamma^0=\left(\begin{matrix}0&1\\1&0\end{matrix}\right),\ \gamma^0=\left(\begin{matrix}0&\sigma^i\\-\sigma^i&0\end{matrix}\right),
+$$
+
+$$
+\sigma^1=\left(\begin{matrix}0&1\\1&0\end{matrix}\right),\ \sigma^2=\left(\begin{matrix}0&-i\\i&0\end{matrix}\right),\ \sigma^1=\left(\begin{matrix}1&0\\0&-1\end{matrix}\right)
+$$
+
+$$
+\psi=\left(\begin{matrix}u^+\\u^-\end{matrix}\right)
+$$
+
+
 
 
 - 参考教材: 
