@@ -19,22 +19,53 @@
 
 ## 2. Abraham-Lorentz-Dirac方程
 
-由[Max Abraham](https://en.wikipedia.org/wiki/Max_Abraham), [Hendrik Lorentz](https://en.wikipedia.org/wiki/Hendrik_Lorentz)以及[P. A. M. Dirac](https://en.wikipedia.org/wiki/Paul_Dirac)命名，是Dirac在1938年将运动方程中的质量与Abraham-Lorentz力重整化后得到的[^2]，在[-,+,+,+]度规下，
+由[Max Abraham](https://en.wikipedia.org/wiki/Max_Abraham), [Hendrik Lorentz](https://en.wikipedia.org/wiki/Hendrik_Lorentz)以及[P. A. M. Dirac](https://en.wikipedia.org/wiki/Paul_Dirac)命名，是Dirac在1938年将运动方程中的质量与Abraham-Lorentz力重整化后得到的[^2]。Dirac利用Maxwell方程$\partial_\mu F^{\mu\nu}=j^\nu$的解包含推迟解和超前解的特点，将其重新分解为对称和反对称部分：
+$$
+F^{\mu\nu}_S=\frac{1}{2}(F^{\mu\nu}_{\text{ret}}+F^{\mu\nu}_{\text{adv}}),\ F^{\mu\nu}_R=\frac{1}{2}(F^{\mu\nu}_{\text{ret}}-F^{\mu\nu}_{\text{adv}})
+$$
+其中推迟解和超前解可分别由对应的Green函数得到：
+$$
+G_{\text{ret}}(x)=\frac{1}{2\pi}\theta(x^0)\delta(x^2),\ G_{\text{adv}}(x)=\frac{1}{2\pi}\theta(-x^0)\delta(x^2),\\
+G_{S}(x)=\frac{1}{4\pi}\delta(x^2),\ G_{R}(x)=\frac{1}{4\pi}\text{sgn}(x)\delta(x^2),\
+$$
+假设粒子世界线为$y=y(\tau)$，则对称和反对称势分别为
+$$
+A^\mu_S=\frac{\mu_0q}{4\pi}\int d\tau v^\mu(\tau)\delta((x-y(\tau))^2),\ A^\mu_R=\frac{\mu_0q}{4\pi}\int d\tau v^\mu(\tau)\text{sgn}(x-y(\tau))\delta((x-y(\tau))^2),
+$$
+电磁场为
+$$
+
+$$
+当我们将观测点（场点$x$）取在粒子世界线上$x=y(\tau_0)$时，展开可得
+$$
+y(\tau)=y(\tau_0)+(\tau-\tau_0)\frac{dy(\tau)}{d\tau}\bigg|_{\tau=\tau_0}+\frac{1}{2!}(\tau-\tau_0)^2\frac{d^2y(\tau)}{d\tau^2}\bigg|_{\tau=\tau_0}+\ldots=y(\tau_0)+(\tau-\tau_0)v^\mu_0+\frac{1}{2!}(\tau-\tau_0)^2a^\mu_0+\frac{1}{3!}(\tau-\tau_0)^3\dot{a}^\mu_0+\ldots
+$$
+因此
+$$
+(y(\tau_0)-y(\tau))^2=(\tau-\tau_0)^2c^2-\frac{1}{12}(\tau-\tau_0)^4a^\mu_0a_{\mu0}+\mathcal{O}((\tau-\tau_0)^5)
+$$
+其中用到$v^\mu_0v_{\mu0}=c^2,v^\mu_0a_{\mu0}=0$以及$v^\mu_0\dot{a}_{\mu0}=-a^\mu_0a_{\mu0}$.
+
+由非相对论的Abraham-Lorentz力
+$$
+\mathbf{F}^{\text{rad}}=\frac{\mu_0q^2}{6\pi c}\frac{d\mathbf{a}}{dt}
+$$
+推广至具有Lorentz协变的相对论形式，注意到
+$$
+p^\mu=mv^\mu=m\gamma(c,\mathbf{v}),\ \frac{dp^\mu}{d\tau}=m\frac{dv^\mu}{dt}\frac{dt}{d\tau}=m\gamma^2\left(\frac{\gamma^2}{c}\mathbf{v}\cdot\mathbf{a},\mathbf{a}+\frac{\gamma^2}{c^2}(\mathbf{v}\cdot\mathbf{a})\mathbf{v}\right)
+$$
+可得在$p^\mu F^{\text{rad}}_\mu=0$的要求下，
 $$
 F^{\text{rad}}_\mu=\frac{\mu_0q^2}{6\pi mc}\left[\frac{d^2p_\mu}{d\tau^2}-\frac{p_\mu}{m^2c^2}\left(\frac{dp_\nu}{d\tau}\frac{dp^\nu}{d\tau}\right)\right],
 $$
-结合相对论协变的Lamor公式
+对应的运动方程
 $$
-P=\frac{\mu_0q^2a^2\gamma^6}{6\pi c},
+\frac{dp^\mu}{d\tau}=F^{\text{rad}}_{\mu}+\frac{q}{c}F^{\mu\nu}v_\nu
 $$
-可以验证
-$$
-\frac{1}{\Delta t}\int_0^{t}Pdt'=\frac{1}{\Delta t}\int_0^{t}\mathbf{F}^{\text{rad}}\cdot\mathbf{v}dt'
-$$
-其中
-$$
-p^\mu=mv^\mu=m\gamma(c,\mathbf{v}),\ \frac{dp^\mu}{d\tau}=m\frac{dv^\mu}{dt}\frac{dt}{d\tau}=m\gamma(\frac{\gamma^3}{c}\mathbf{v}\cdot\mathbf{a},)
-$$
+即为Abraham-Lorentz-Dirac方程(ALD方程)。可以看到，与非相对论情形相比，ALD力具有协变性，但是对应运动方程仍然是时间的三阶导数，因此预加速(preacceleration)与奔离解(runaway solution)仍然存在。
+
+
+
 
 
 ---
