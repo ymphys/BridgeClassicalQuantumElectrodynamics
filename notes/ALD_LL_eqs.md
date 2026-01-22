@@ -19,15 +19,23 @@
 
 ## 2. Abraham-Lorentz-Dirac方程
 
-由[Max Abraham](https://en.wikipedia.org/wiki/Max_Abraham), [Hendrik Lorentz](https://en.wikipedia.org/wiki/Hendrik_Lorentz)以及[P. A. M. Dirac]() 
+由[Max Abraham](https://en.wikipedia.org/wiki/Max_Abraham), [Hendrik Lorentz](https://en.wikipedia.org/wiki/Hendrik_Lorentz)以及[P. A. M. Dirac](https://en.wikipedia.org/wiki/Paul_Dirac)命名，是Dirac在1938年将运动方程中的质量与Abraham-Lorentz力重整化后得到的[^2]，在[-,+,+,+]度规下，
+$$
+F^{\text{rad}}_\mu=\frac{\mu_0q^2}{6\pi mc}\left[\frac{d^2p_\mu}{d\tau^2}-\frac{p_\mu}{m^2c^2}\left(\frac{dp_\nu}{d\tau}\frac{dp^\nu}{d\tau}\right)\right],
+$$
+结合相对论协变的Lamor公式
+$$
+P=\frac{\mu_0q^2a^2\gamma^6}{6\pi c},
+$$
+可以验证
+$$
+\frac{1}{\Delta t}\int_0^{t}Pdt'=\frac{1}{\Delta t}\int_0^{t}\mathbf{F}^{\text{rad}}\cdot\mathbf{v}dt'
+$$
+其中
+$$
+p^\mu=mv^\mu=m\gamma(c,\mathbf{v}),\ \frac{dp^\mu}{d\tau}=m\frac{dv^\mu}{dt}\frac{dt}{d\tau}=m\gamma(\frac{\gamma^3}{c}\mathbf{v}\cdot\mathbf{a},)
+$$
 
-- 用自己的话描述概念
-- 允许使用不精确但直观的语言
-- 明确指出哪些地方是“猜测”“尚未确认的理解”
-
-示例：
-- “我目前的理解是……”
-- “这里我暂时只能给出一个图像化的解释”
 
 ---
 
@@ -57,7 +65,8 @@
 - 脚注
 
   [^1]: [【学习笔记】经典电动力学中的辐射](https://zhuanlan.zhihu.com/p/1988653319149877095)
-
+  [^2]: Paul Adrien Maurice Dirac. Classical theory of radiating electrons. [**Proc. A** 1 August 1938; 167 (929): 148–169.](https://royalsocietypublishing.org/rspa/article/167/929/148/5807/Classical-theory-of-radiating-electrons)
+  
 - 参考教材
 
 - 相关讲义或论文
