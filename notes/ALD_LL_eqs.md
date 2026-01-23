@@ -46,14 +46,26 @@ $$
 $$
 其中用到$v^\mu_0v_{\mu0}=c^2,v^\mu_0a_{\mu0}=0$以及$v^\mu_0\dot{a}_{\mu0}=-a^\mu_0a_{\mu0}$. 进一步将上述Minkowski距离代入$\delta$函数
 $$
-\delta((y(\tau_0)-y(\tau))^2)=\delta((\tau-\tau_0)^2c^2[1-\frac{1}{12c^2}(\tau-\tau_0)^2a^\mu_0a_{\mu0}])
+\delta((y(\tau_0)-y(\tau))^2)=\delta((\tau-\tau_0)^2c^2[1-\frac{1}{12c^2}(\tau-\tau_0)^2a^\mu_0a_{\mu0}+\mathcal{O}((\tau-\tau_0)^3)])
 $$
-求的对称和反对称势为
+由$\delta$函数性质可得，在$x\to y(\tau_0)$时，令$u\equiv\tau-\tau_0$，保留领头阶可得
+$$
+\delta((y(\tau_0)-y(\tau))^2)=\frac{1}{2c^2|u|}(\delta(u^+)+\delta(u^-))
+$$
+求得对称势为
+$$
+A^{\mu}_S=\frac{\mu_0q}{8\pi c^2}\int d\tau \frac{v^\mu(\tau)}{|\tau-\tau_0|}(\delta(u^+)+\delta(u^-))
+$$
+只要场点在粒子世界线上，对称部分即发散。
 
-
-
-
-
+反对称部分为
+$$
+A^\mu_R=-\frac{\mu_0q}{8\pi c^2}\int d\tau\frac{v^\mu(\tau)}{|u|}[\delta(u^+)-\delta(u^-)]=-\frac{\mu_0q}{4\pi c^2}\int du v^\mu(u+\tau_0)\frac{d\delta(u)}{du}=\frac{\mu_0q}{4\pi c^2}a^\mu(\tau_0),
+$$
+可以看到即使在粒子世界线上发散项亦严格相消，仅留下有限项。据此求得反对称部分的场为
+$$
+F^{\mu\nu}_R=\frac{\mu_0q}{4\pi c^2}(v^\mu \dot{a}^\nu(\tau)-v^\nu \dot{a}^\mu(\tau))
+$$
 由非相对论的Abraham-Lorentz力
 $$
 \mathbf{F}^{\text{rad}}=\frac{\mu_0q^2}{6\pi c}\frac{d\mathbf{a}}{dt}
