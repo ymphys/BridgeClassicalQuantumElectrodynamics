@@ -34,17 +34,25 @@ A^\mu_S=\frac{\mu_0q}{4\pi}\int d\tau v^\mu(\tau)\delta((x-y(\tau))^2),\ A^\mu_R
 $$
 电磁场为
 $$
-
+F^{\mu\nu}_S=\partial^{\mu}A^{\nu}_S-\partial^{\nu}A^{\mu}_S,\ F^{\mu\nu}_R=\partial^{\mu}A^{\nu}_R-\partial^{\nu}A^{\mu}_R,
 $$
 当我们将观测点（场点$x$）取在粒子世界线上$x=y(\tau_0)$时，展开可得
 $$
 y(\tau)=y(\tau_0)+(\tau-\tau_0)\frac{dy(\tau)}{d\tau}\bigg|_{\tau=\tau_0}+\frac{1}{2!}(\tau-\tau_0)^2\frac{d^2y(\tau)}{d\tau^2}\bigg|_{\tau=\tau_0}+\ldots=y(\tau_0)+(\tau-\tau_0)v^\mu_0+\frac{1}{2!}(\tau-\tau_0)^2a^\mu_0+\frac{1}{3!}(\tau-\tau_0)^3\dot{a}^\mu_0+\ldots
 $$
-因此
+因此Minkowski距离可展开为
 $$
 (y(\tau_0)-y(\tau))^2=(\tau-\tau_0)^2c^2-\frac{1}{12}(\tau-\tau_0)^4a^\mu_0a_{\mu0}+\mathcal{O}((\tau-\tau_0)^5)
 $$
-其中用到$v^\mu_0v_{\mu0}=c^2,v^\mu_0a_{\mu0}=0$以及$v^\mu_0\dot{a}_{\mu0}=-a^\mu_0a_{\mu0}$.
+其中用到$v^\mu_0v_{\mu0}=c^2,v^\mu_0a_{\mu0}=0$以及$v^\mu_0\dot{a}_{\mu0}=-a^\mu_0a_{\mu0}$. 进一步将上述Minkowski距离代入$\delta$函数
+$$
+\delta((y(\tau_0)-y(\tau))^2)=\delta((\tau-\tau_0)^2c^2[1-\frac{1}{12c^2}(\tau-\tau_0)^2a^\mu_0a_{\mu0}])
+$$
+求的对称和反对称势为
+
+
+
+
 
 由非相对论的Abraham-Lorentz力
 $$
