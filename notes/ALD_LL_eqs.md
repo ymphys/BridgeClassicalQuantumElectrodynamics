@@ -32,29 +32,15 @@ $$
 $$
 A^\mu_S=\frac{\mu_0qc}{4\pi}\int d\tau v^\mu(\tau)\delta(\Delta^2),\ A^\mu_R=\frac{\mu_0qc}{4\pi}\int d\tau v^\mu(\tau)\text{sgn}(\Delta^0)\delta(\Delta^2),
 $$
-其中$\Delta^\mu=x^\mu-y^\mu(\tau),\Delta^2=\Delta^\mu\Delta_\mu,\Delta^0$为其0-分量。当我们将观测点（场点$x$）取在粒子世界线上$x=y(\tau_0)$时，展开可得
+其中$\Delta^\mu=x^\mu-y^\mu(\tau),\Delta^2=\Delta^\mu\Delta_\mu,\Delta^0$为其0-分量。积分$d\tau$的范围是$(-\infty,\infty)$，表示对过去和未来所有时刻的贡献进行累加，当我们需要考虑粒子在特定时刻$\tau_0$受到的力时，将观测点（场点$x$）取在粒子世界线上$x=y(\tau_0)$时，令$u\equiv\tau-\tau_0$，Minkowski距离可展开为
 $$
-y(\tau)=y(\tau_0)+(\tau-\tau_0)\frac{dy(\tau)}{d\tau}\bigg|_{\tau=\tau_0}+\frac{1}{2!}(\tau-\tau_0)^2\frac{d^2y(\tau)}{d\tau^2}\bigg|_{\tau=\tau_0}+\ldots=y(\tau_0)+(\tau-\tau_0)v^\mu_0+\frac{1}{2!}(\tau-\tau_0)^2a^\mu_0+\frac{1}{3!}(\tau-\tau_0)^3\dot{a}^\mu_0+\ldots
+\Delta^2=(y(\tau_0)-y(\tau))^2=u^2c^2-\frac{1}{12}u^4a^\mu_0a_{\mu0}+\mathcal{O}(u^5)
 $$
-因此Minkowski距离可展开为
+其中用到$v^\mu_0v_{\mu0}=c^2,v^\mu_0a_{\mu0}=0$以及$v^\mu_0\dot{a}_{\mu0}=-a^\mu_0a_{\mu0}$. 进一步将上述Minkowski距离代入$\delta$函数，并保留领头阶可得
 $$
-\lim_{x\to y(\tau_0)}\Delta^2=(y(\tau_0)-y(\tau))^2=(\tau-\tau_0)^2c^2-\frac{1}{12}(\tau-\tau_0)^4a^\mu_0a_{\mu0}+\mathcal{O}((\tau-\tau_0)^5)
+\delta((y(\tau_0)-y(\tau))^2)=\delta(u^2c^2[1-\frac{1}{12c^2}u^2a^\mu_0a_{\mu0}+\mathcal{O}(u^3)])=\frac{1}{2c^2|u|}(\delta(u^+)+\delta(u^-))
 $$
-其中用到$v^\mu_0v_{\mu0}=c^2,v^\mu_0a_{\mu0}=0$以及$v^\mu_0\dot{a}_{\mu0}=-a^\mu_0a_{\mu0}$. 进一步将上述Minkowski距离代入$\delta$函数
-$$
-\delta((y(\tau_0)-y(\tau))^2)=\delta((\tau-\tau_0)^2c^2[1-\frac{1}{12c^2}(\tau-\tau_0)^2a^\mu_0a_{\mu0}+\mathcal{O}((\tau-\tau_0)^3)])
-$$
-由$\delta$函数性质可得，在$x\to y(\tau_0)$时，令$u\equiv\tau-\tau_0$，保留领头阶可得
-$$
-\delta((y(\tau_0)-y(\tau))^2)=\frac{1}{2c^2|u|}(\delta(u^+)+\delta(u^-))
-$$
-求得对称势为
-$$
-A^{\mu}_S=\frac{\mu_0q}{8\pi c}\int d\tau \frac{v^\mu(\tau)}{|\tau-\tau_0|}(\delta(u^+)+\delta(u^-))
-$$
-只要场点在粒子世界线上，对称部分即发散。
-
-反对称部分为
+反对称部分的势为
 $$
 A^\mu_R=-\frac{\mu_0q}{8\pi c}\int d\tau\frac{v^\mu(\tau)}{|u|}[\delta(u^+)-\delta(u^-)]=-\frac{\mu_0q}{4\pi c}\int du v^\mu(u+\tau_0)\frac{d\delta(u)}{du}=\frac{\mu_0q}{4\pi c^2}a^\mu(\tau_0),
 $$
@@ -72,32 +58,86 @@ F^\mu_{\text{rad}}=-\frac{\mu_0cq^2}{3\pi}(a_0^2v_0^\mu+c^2\dot{a}_0^\mu)\int_0^
 $$
 即具有Lorentz协变的Abraham-Lorentz力，注意括号中第二项有的教科书中符号为负，来自于度规选择的区别，本文选择$(+,-,-,-)$度规。
 
-对应的运动方程
+对称部分的势为
 $$
-\frac{dp^\mu}{d\tau}=F^{\text{rad}}_{\mu}+\frac{q}{c}F^{\mu\nu}v_\nu
+A^{\mu}_S=\frac{\mu_0q}{8\pi c}\int d\tau \frac{v^\mu(\tau)}{|\tau-\tau_0|}(\delta(u^+)+\delta(u^-))
 $$
-即为Abraham-Lorentz-Dirac方程(ALD方程)。可以看到，与非相对论情形相比，ALD力具有协变性，但是对应运动方程仍然是时间的三阶导数，因此预加速(preacceleration)与奔离解(runaway solution)仍然存在。
+只要场点在粒子世界线上，对称部分即发散。由在任意场点$x$处对称势可求得对称部分的场为
 
+$$
+F^{\mu\nu}_S=\frac{\mu_0qc}{2\pi}\int d\tau \delta'(\Delta^2)[v^\nu(\tau)\Delta^\mu-v^\mu(\tau)\Delta^\nu]
+$$
+粒子在$\tau_0$时刻受到的来自对称部分场的力为
+$$
+F^\mu_{S}=qF^{\mu\nu}_Sv_{0\nu}=\frac{\mu_0cq^2}{2\pi}\int du \delta'(\Delta^2)\left[\frac{1}{2}c^2u^2a_0^\mu+\frac{1}{3}u^3(a_0^2v_0^\mu+c^2\dot{a}_0^\mu)\right]
+$$
+再次借助奇偶性分析可知$[\ldots]$中的第二项为0，而第一项会给出发散的结果，引入正则化$\Delta^2\to\Delta^2-\epsilon^2$，积分可得
+$$
+F^\mu_{S}=\frac{\mu_0c^3q^2}{4\pi}a_0^\mu\int du \delta'(\Delta^2-\epsilon^2)u^2=\frac{\mu_0c^3q^2}{4\pi}a_0^\mu(-\frac{1}{2c^3\epsilon})=-\frac{\mu_0q^2}{8\pi\epsilon}a_0^\mu
+$$
+将对称和反对称部分的力均代入运动方程可得
+$$
+\frac{dp^\mu}{d\tau}=F_{\text{rad}}^{\mu}+F_{S}^{\mu}+\frac{q}{c}F^{\mu\nu}v_\nu
+$$
 
+$$
+m_{\text{bare}}a_0^\mu=\frac{\mu_0q^2}{6\pi c}(\dot{a}_0^\mu+\frac{a_0^2}{c^2}v_0^\mu)-\frac{\mu_0q^2}{8\pi\epsilon}a_0^\mu+\frac{q}{c}F^{\mu\nu}v_\nu
+$$
 
+即为Abraham-Lorentz-Dirac方程(ALD方程)。如定义
+$$
+\delta m=\frac{\mu_0q^2}{8\pi\epsilon},\ m_{\text{phys}}=m_{\text{bare}}+\delta m
+$$
+则发散部分被吸收进裸质量中，物理上可观测的质量仍然是有限的，这种思想即为**重整化**。
+
+可以看到，与非相对论情形相比，ALD力具有协变性，但是对应运动方程仍然是时间的三阶导数，因此预加速(preacceleration)与奔离解(runaway solution)仍然存在。
 
 
 ---
 
 ## 3. Landau-Lifshitz方程
 
-（不是复述教材，而是**对照你的理解与教材**）
+如上节我们看到的，ALD 方程是一个关于时间的三阶微分方程（包含 $\dot{a}^\mu$），这在数学上导致了不符合物理的预加速与奔离解。Landau 和 Lifshitz 指出，在经典力学范围内，辐射反作用力相对于外部 Lorentz 力通常是很小的。因此，我们可以将辐射项视为微扰，通过将零阶运动方程代入一阶项来降阶。具体做法如下：
 
-- 教材是如何陈述的
-- 哪一句话你觉得“理所当然但不真正明白”
-- 哪些步骤在教材中被省略
+首先，定义一个特征时间常数 $\tau_e$：
+$$
+\tau_e = \frac{\mu_0 q^2}{6\pi m c}
+$$
+则 ALD 方程写为：
+$$
+a^\mu = \frac{q}{mc} F^{\mu\nu} v_\nu + \tau_e \left( \dot{a}^\mu + \frac{a^2}{c^2} v^\mu \right)
+$$
+当辐射项极小时（$\tau_e \to 0$），粒子的加速度由 Lorentz 力决定。这可以作为零阶近似，对零阶方程式两边关于固有时 $\tau$ 求导：
+$$
+\dot{a}^\mu = \frac{d}{d\tau} \left( \frac{q}{mc} F^{\mu\nu} v_\nu \right) = \frac{q}{mc} \left[ \left( \frac{d F^{\mu\nu}}{d\tau} \right) v_\nu + F^{\mu\nu} \left( \frac{dv_\nu}{d\tau} \right) \right]\approx \frac{q}{mc} \left[ (v^\alpha \partial_\alpha F^{\mu\nu}) v_\nu + F^{\mu\nu} \left( \frac{q}{mc} F_{\nu\lambda} v^\lambda \right) \right]
+$$
+其中第一项利用了全微分关系 $\frac{d F^{\mu\nu}}{d\tau} = \frac{\partial F^{\mu\nu}}{\partial x^\alpha} \frac{dx^\alpha}{d\tau} = v^\alpha \partial_\alpha F^{\mu\nu}$，第二项代入了零阶加速度作为近似。整理得：
+$$
+\dot{a}^\mu \approx \frac{q}{mc} (v^\alpha \partial_\alpha F^{\mu\nu}) v_\nu + \frac{q^2}{m^2 c^2} F^{\mu\nu} F_{\nu\lambda} v^\lambda
+$$
+对$a^2$项亦代入零级加速度近似，
+$$
+a^2 \approx \left( \frac{q}{mc} F^{\alpha\beta} v_\beta \right) \left( \frac{q}{mc} F_{\alpha\lambda} v^\lambda \right) = \frac{q^2}{m^2 c^2} (F^{\alpha\beta} v_\beta) (F_{\alpha\lambda} v^\lambda)
+$$
+得到 Landau-Lifshitz 方程
+$$
+a^\mu = \frac{q}{mc} F^{\mu\nu} v_\nu + \frac{q}{mc} \tau_e (v^\alpha \partial_\alpha F^{\mu\nu}) v_\nu + \frac{q^2}{m^2 c^2} \tau_e F^{\mu\nu} F_{\nu\lambda} v^\lambda + \tau_e \frac{v^\mu}{c^2} \left[ \frac{q^2}{m^2 c^2} (F^{\alpha\beta} v_\beta) (F_{\alpha\lambda} v^\lambda) \right]
+$$
+代入 $\tau_e$ 的定义并整理各分量，通常 Landau-Lifshitz 方程被写成以下三项之和的形式：
 
-可引用：
-- Jackson / Landau / Griffiths 等（无需完整推导）
+$$
+m a^\mu = \underbrace{\frac{q}{c} F^{\mu\nu} v_\nu}_{\text{Lorentz Force}} + \underbrace{\frac{\mu_0 q^2}{6\pi c} \left[ \frac{q}{mc} (v^\alpha \partial_\alpha F^{\mu\nu}) v_\nu \right]}_{\text{Field Gradient Term}} + \underbrace{\frac{\mu_0 q^2}{6\pi c} \frac{q^2}{m^2 c^2} \left[ F^{\mu\nu} F_{\nu\lambda} v^\lambda + \frac{v^\mu}{c^2} (v_\beta F^{\beta\alpha} F_{\alpha\lambda} v^\lambda) \right]}_{\text{Squared Field Term}}
+$$
+
+其中梯度项描述了由于外场在粒子运动范围内的非均匀性导致的修正，而平方项描述了即使在均匀场中，粒子由于偏转而产生的辐射能量流失及其对轨迹的修正。
+
+可以看到，通过迭代代入，我们成功地将ALD方程转换为了一个可以实际计算的“唯象有效方程”。应该注意，这种近似仅在辐射力远小于 Lorentz 力时有效。
 
 ---
 
-## 6. 小结（阶段性，而非结论）
+## 4. 例子
+
+
 
 - 这一轮学习你确认了什么
 - 哪些误解被纠正了
@@ -113,7 +153,3 @@ $$
   [^2]: Paul Adrien Maurice Dirac. Classical theory of radiating electrons. [**Proc. A** 1 August 1938; 167 (929): 148–169.](https://royalsocietypublishing.org/rspa/article/167/929/148/5807/Classical-theory-of-radiating-electrons)
   
 - 参考教材
-
-- 相关讲义或论文
-
-- 给未来自己的提醒
