@@ -121,21 +121,25 @@ a^2 \approx \left( \frac{q}{mc} F^{\alpha\beta} v_\beta \right) \left( \frac{q}{
 $$
 得到 Landau-Lifshitz 方程
 $$
-a^\mu = \frac{q}{mc} F^{\mu\nu} v_\nu + \frac{q}{mc} \tau_e (v^\alpha \partial_\alpha F^{\mu\nu}) v_\nu + \frac{q^2}{m^2 c^2} \tau_e F^{\mu\nu} F_{\nu\lambda} v^\lambda + \tau_e \frac{v^\mu}{c^2} \left[ \frac{q^2}{m^2 c^2} (F^{\alpha\beta} v_\beta) (F_{\alpha\lambda} v^\lambda) \right]
+a^\mu = \frac{q}{mc} F^{\mu\nu} v_\nu + \frac{q}{mc} \tau_e (v^\alpha \partial_\alpha F^{\mu\nu}) v_\nu + \left(\frac{q}{mc}\right)^2\tau_e\left[ F^{\mu\nu} F_{\nu\lambda} v^\lambda + \frac{v^\mu}{c^2}(F^{\alpha\beta} v_\beta) (F_{\alpha\lambda} v^\lambda) \right]
 $$
-代入 $\tau_e$ 的定义并整理各分量，通常 Landau-Lifshitz 方程被写成以下三项之和的形式：
-
-$$
-m a^\mu = \underbrace{\frac{q}{c} F^{\mu\nu} v_\nu}_{\text{Lorentz Force}} + \underbrace{\frac{\mu_0 q^2}{6\pi c} \left[ \frac{q}{mc} (v^\alpha \partial_\alpha F^{\mu\nu}) v_\nu \right]}_{\text{Field Gradient Term}} + \underbrace{\frac{\mu_0 q^2}{6\pi c} \frac{q^2}{m^2 c^2} \left[ F^{\mu\nu} F_{\nu\lambda} v^\lambda + \frac{v^\mu}{c^2} (v_\beta F^{\beta\alpha} F_{\alpha\lambda} v^\lambda) \right]}_{\text{Squared Field Term}}
-$$
-
-其中梯度项描述了由于外场在粒子运动范围内的非均匀性导致的修正，而平方项描述了即使在均匀场中，粒子由于偏转而产生的辐射能量流失及其对轨迹的修正。
+可见其由三部分组成，第一项由Lorentz力贡献，第二项是梯度项，描述了由于外场在粒子运动范围内的非均匀性导致的修正，第三项是平方项，描述了即使在均匀场中，粒子由于偏转而产生的辐射能量流失及其对轨迹的修正。
 
 可以看到，通过迭代代入，我们成功地将ALD方程转换为了一个可以实际计算的“唯象有效方程”。应该注意，这种近似仅在辐射力远小于 Lorentz 力时有效。
 
 ---
 
-## 4. 例子
+## 4. 同步辐射衰减
+
+作为一个LL方程的实际应用，考虑同步辐射中电子的能量损失。为简单起见，假设电子处于匀强磁场$\mathbf{B}=B\hat{z}$中，电磁场张量为$F^{21}=-F^{12}=B$, 其余分量为0，梯度项也为0，LL方程为
+$$
+a^0 = \tau_e\left(\frac{q}{mc^2}\right)^2v^0(F^{\alpha\beta} v_\beta) (F_{\alpha\lambda} v^\lambda)
+$$
+定义$v_\perp^2=v_x^2+v_y^2$, 可得$(F^{\alpha\beta} v_\beta) (F_{\alpha\lambda} v^\lambda)=-B^2v_\perp^2$. 进而由$a^0=dv^0/d\tau$以及$v^\mu=\gamma(c,\vec{v})$, $dt=\gamma d\tau$可得
+$$
+\frac{d\gamma mc^2}{dt}=-\tau_e\frac{q^2B^2}{mc^2}v_\perp^2
+$$
+代入$\tau_e$的定义可得相对论协变的Lamor辐射功率
 
 
 
